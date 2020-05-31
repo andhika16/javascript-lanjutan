@@ -1,19 +1,35 @@
+function Car(speed, color, hp, fuel) {
 
-
-function Car(speed, color, horsepower) {
     this.speed = speed;
     this.color = color;
-    this.horsepower = horsepower;
+    this.hp = hp;
+    this.fuel = fuel;
+
+
+    this.carSpeed = function (extendSpeed) {
+
+        this.speed = this.speed + extendSpeed;
+
+
+
+
+        console.log("kecepatan mobil bertambah menjadi " + this.speed + " KM/hrs")
+
+    }
+
+
 
 }
 
 
 
+let ferrari = new Car(200, "red", 1000);
 
-let ferrari = new Car(200, 'red', 600);
+ferrari.carSpeed(6);
 
 
-console.log(ferrari);
+
+
 
 
 
