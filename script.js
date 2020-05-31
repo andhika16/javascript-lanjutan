@@ -5,13 +5,6 @@ function Car(speed, color, horsepower) {
     this.color = color;
     this.horsepower = horsepower;
 
-    function speedActivate(speed) {
-        speed += 1;
-        console.log("kecepatan bertambah" + speed + "KM");
-
-    }
-
-
 }
 
 
@@ -20,7 +13,7 @@ function Car(speed, color, horsepower) {
 let ferrari = new Car(200, 'red', 600);
 
 
-
+console.log(ferrari);
 
 
 
