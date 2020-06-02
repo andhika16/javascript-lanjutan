@@ -1,134 +1,34 @@
-// const mahasiswaMethod = {
 
-//     makan: function (porsi) {
 
-//         this.energi += porsi;
-//         console.log(`Halo ${this.nama}, Selamat Makan`);
+// hoisting yaitu element var memiliki nilai undifined pada global scope
+console.log(nama);
+var nama = 'andhika';
+// output: undefined
 
+// cration phase and execution phase
+// var = undefined
+// function = fn(); jika function maka akan mengembalikan nilai didalam function itu sendiri
+// window = global object
+// this = window
 
-//     },
+// execution phase
 
-//     main: function (jam) {
 
-//         this.energi -= jam;
-//         console.log(`halo ! ${this.nama}, Selamat Bermain`);
-//     },
 
-//     tidur: function (jam) {
 
-//         this.energi += jam * 2;
-//         console.log(`Halo ${this.nama}, Selamat tidur`);
 
 
-//     }
 
+var nama = "andhika"
+var umur = 20;
 
-// }
+console.log(sayHello());
 
+function sayHello() {
+    return `halo nama saya ${nama} , saya berumur ${umur} tahun`;
 
-// function Mahasiswa(nama, energi) {
 
-//     let mahasiswa = Object.create(mahasiswaMethod);
-
-//     mahasiswa.nama = nama;
-//     mahasiswa.energi = energi;
-
-//     return mahasiswa;
-// }
-
-
-
-// let andhika = Mahasiswa("andhika", 20);
-
-// let kope = Mahasiswa("kope", 20);
-
-
-// Contoh object function declaration && Protoype
-
-
-// const karyawan_method = {
-
-//     kerja: function (lembur) {
-//         this.gaji += lembur * 2;
-//         console.log(`anda telah lembur maka gaji anda ditambah ${this.gaji} , Selamat bekerja`);
-
-//     }
-
-// }
-
-
-// function Karyawan(nama, gaji) {
-
-//     let karyawan = Object.create(karyawan_method);
-
-//     karyawan.nama = nama;
-//     karyawan.gaji = gaji;
-
-//     return karyawan;
-
-// }
-
-
-
-// let andhika = Karyawan("andhika", 90000);
-
-
-// Sebelum ada sebuah class dalam object javascript menggunakan prototype untuk memanggil sebuah method 
-// dalam objek JS.
-
-
-// function Students(name, energy) {
-
-//     this.name = name;
-//     this.energy = energy;
-
-// }
-
-
-// Students.prototype.eats = function (p) {
-
-//     this.energy += p * 2;
-//     console.log(`Hai ${this.name}, Enjoy your meal`);
-
-
-// }
-
-
-// let andhika = new Students("andhika", 20);
-
-
-// setelah dibuatlah Class dalam javascript.
-
-
-
-// class Mahasiswa {
-
-//     constructor(name, energy) {
-//         this.name = name;
-//         this.energy = energy;
-
-//     }
-
-//     makan(portion) {
-
-//         this.energy += portion * 2;
-//         console.log(`Hai ${this.name}, Enjoy your meal`);
-
-
-
-//     }
-
-
-// }
-
-
-
-// let andhika = new Mahasiswa("andhika", 10);
-
-
-
-
-
+}
 
 
 
