@@ -1,34 +1,75 @@
 
+function init() {
 
-// hoisting yaitu element var memiliki nilai undifined pada global scope
-console.log(nama);
-var nama = 'andhika';
-// output: undefined
+    let nama = "andhika";
 
-// cration phase and execution phase
-// var = undefined
-// function = fn(); jika function maka akan mengembalikan nilai didalam function itu sendiri
-// window = global object
-// this = window
+    return function () {
 
-// execution phase
+        console.log(`halo , ${nama}`);
 
-
-
-
-
-
-
-var nama = "andhika"
-var umur = 20;
-
-console.log(sayHello());
-
-function sayHello() {
-    return `halo nama saya ${nama} , saya berumur ${umur} tahun`;
-
+    }
 
 }
+
+
+let a = init();
+
+
+console.log(a());
+
+
+
+
+let ucapSalam = function (salam) {
+
+    // local scope ..
+    // ..
+    // ..
+    // lexical scope
+    // ..
+    // ..
+    return function (nama) {
+
+        return `Halo, Selamat ${salam}, ${nama}`;
+    }
+
+}
+
+
+
+let Pagi = ucapSalam('Pagi');
+let Malam = ucapSalam('Malam');
+let Siang = ucapSalam('Siang');
+
+
+console.log(Pagi('Andhika'));
+
+
+
+
+let tambah = (function () {
+
+    let hitung = 0;
+
+    return function () {
+        return ++hitung;
+    }
+
+
+})();
+
+
+console.log(tambah());
+console.log(tambah());
+console.log(tambah());
+console.log(tambah());
+
+
+
+
+
+
+
 
 
 
