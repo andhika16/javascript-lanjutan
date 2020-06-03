@@ -1,68 +1,16 @@
+let mahasiswa = ["codeigniter", "react", "bootstrap"];
 
-function init() {
-
-    let nama = "andhika";
-
-    return function () {
-
-        console.log(`halo , ${nama}`);
-
-    }
-
-}
+// dibawah ini contoh arrow function
+let huruf = mahasiswa.map(nama => ({ nama, nomor: nama.length }));
+let contoh = mahasiswa.map(nama => nama.length);
+console.table(huruf);
 
 
-let a = init();
-
-
-console.log(a());
+console.log(contoh);
 
 
 
 
-let ucapSalam = function (salam) {
-
-    // local scope ..
-    // ..
-    // ..
-    // lexical scope
-    // ..
-    // ..
-    return function (nama) {
-
-        return `Halo, Selamat ${salam}, ${nama}`;
-    }
-
-}
-
-
-
-let Pagi = ucapSalam('Pagi');
-let Malam = ucapSalam('Malam');
-let Siang = ucapSalam('Siang');
-
-
-console.log(Pagi('Andhika'));
-
-
-
-
-let tambah = (function () {
-
-    let hitung = 0;
-
-    return function () {
-        return ++hitung;
-    }
-
-
-})();
-
-
-console.log(tambah());
-console.log(tambah());
-console.log(tambah());
-console.log(tambah());
 
 
 
