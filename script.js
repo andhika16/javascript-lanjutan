@@ -1,50 +1,68 @@
-
-// let Mahasiswa = function () {
-
-//     this.nama = "andhika";
-//     this.umur = 1000;
+const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
 
-//     sayHello = function () {
-//         console.log(`hallo, ${this.nama} , umur kamu adalah${this.umur}`);
 
+// penulisan fungsi filter secara manual
+
+// let newAngka = [];
+// for (let i = 0; i < angka.length; i++) {
+
+//     if (angka[i] >= 3) {
+//         newAngka.push(angka[i]);
 //     }
-
-
-//     setInterval(() => {
-
-//         console.log(this.umur -= 1); jika fungsi disamping ini menggunakan function declaration maka this pada fungsi sebelah akan mengacu ke window.
-//     }, 1000);
 
 
 // }
 
+// console.log(newAngka);
 
 
-// let andhika = new Mahasiswa();
-
-const box = document.querySelector('.box');
 
 
-box.addEventListener('click', function () {
-
-    let satu = 'size';
-    let dua = 'caption';
-
-    if (this.classList.contains(satu)) {
-
-        [satu, dua] = [dua, satu];
-
-    }
-
-    this.classList.toggle(satu);
-
-    setTimeout(() => {
-        this.classList.toggle(dua);
-    }, 500);
+// penulisan filter secara otomatis
 
 
-});
+// const newAngka = angka.filter(function (a) {
+
+//     return a > 3;
+
+// })
+
+// const newAngka2 = angka.filter(a => a > 3);
+
+// console.log(newAngka);
+// console.log(newAngka2);
+
+// const angka1 = newAngka.map(function (a) {
+
+//     return a * 2;
+
+// });
+
+// console.log(angka1);
+
+
+
+// cara diatas bisa dilakukan dengan lebih simple dengan code dibawah ini :
+
+const newAngka = angka.filter(a => a > 3)
+    .map(a => a * 2)
+    .reduce((a, b) => a + b, 5);
+
+
+console.log(newAngka);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
