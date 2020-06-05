@@ -1,68 +1,39 @@
-const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+// ambil semua video
+
+
+let videos = Array.from(document.querySelectorAll('[data-duration]'));
+
+// pilih yang javascript lanjutan
 
 
 
-// penulisan fungsi filter secara manual
+let jslnjut = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN'))
 
-// let newAngka = [];
-// for (let i = 0; i < angka.length; i++) {
+    // ambil durasi masing" video
+    .map(item => item.dataset.duration)
 
-//     if (angka[i] >= 3) {
-//         newAngka.push(angka[i]);
-//     }
+    // ubah durasi menjadi int,ubah menit ke detik
+    .map(waktu => {
 
+        const parts = waktu.split(':').map(part => parseFloat(part));
+        return (parts[0] * 60) + parts[1];
 
-// }
+    })
+    //jumlahkan semua detik
+    .reduce((total, detik) => total + detik);
 
-// console.log(newAngka);
+// ubah detik ke jam , menit ,detik
 
+const jam = Math.floor(jslnjut / 3600);
+jslnjut = jslnjut - jam * 3600;
 
+const menit = Math.floor(jslnjut / 60);
+const detik = jslnjut - menit * 60;
 
+// simpan di DOM
 
-// penulisan filter secara otomatis
-
-
-// const newAngka = angka.filter(function (a) {
-
-//     return a > 3;
-
-// })
-
-// const newAngka2 = angka.filter(a => a > 3);
-
-// console.log(newAngka);
-// console.log(newAngka2);
-
-// const angka1 = newAngka.map(function (a) {
-
-//     return a * 2;
-
-// });
-
-// console.log(angka1);
-
-
-
-// cara diatas bisa dilakukan dengan lebih simple dengan code dibawah ini :
-
-const newAngka = angka.filter(a => a > 3)
-    .map(a => a * 2)
-    .reduce((a, b) => a + b, 5);
-
-
-console.log(newAngka);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const p_durasi = document.querySelector('.total-durasi');
+const p_jml_video = document.querySelector('.jumlah-video');
+let jmlVideo = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN')).length;
+p_durasi.textContent = `Total : ${jam} Jam, ${menit} Menit, ${detik} Detik.`;
+p_jml_video.textContent = `${jmlVideo} Video`;
