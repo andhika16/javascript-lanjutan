@@ -1,39 +1,133 @@
-// ambil semua video
-
-
-let videos = Array.from(document.querySelectorAll('[data-duration]'));
-
-// pilih yang javascript lanjutan
+// // Latihan Templates Literals
 
 
 
-let jslnjut = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN'))
 
-    // ambil durasi masing" video
-    .map(item => item.dataset.duration)
+// const mhs = {
 
-    // ubah durasi menjadi int,ubah menit ke detik
-    .map(waktu => {
+//     nama: "Andhika",
+//     nim: 19533080,
+//     jurusan: "Teknik Informatika",
+//     email: "moh.andhika16@gmail.com"
 
-        const parts = waktu.split(':').map(part => parseFloat(part));
-        return (parts[0] * 60) + parts[1];
+// }
 
-    })
-    //jumlahkan semua detik
-    .reduce((total, detik) => total + detik);
 
-// ubah detik ke jam , menit ,detik
 
-const jam = Math.floor(jslnjut / 3600);
-jslnjut = jslnjut - jam * 3600;
 
-const menit = Math.floor(jslnjut / 60);
-const detik = jslnjut - menit * 60;
+// const el = `<div class="">
+//     <h1> Nama   : ${mhs.nama}</h1>
+//     <p> Nim     : ${mhs.nim} 
+//         Jurusan : ${mhs.jurusan} 
+//         Email   : ${mhs.email} </p>
 
-// simpan di DOM
+// </div>`
 
-const p_durasi = document.querySelector('.total-durasi');
-const p_jml_video = document.querySelector('.jumlah-video');
-let jmlVideo = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN')).length;
-p_durasi.textContent = `Total : ${jam} Jam, ${menit} Menit, ${detik} Detik.`;
-p_jml_video.textContent = `${jmlVideo} Video`;
+
+
+// const mhs = [
+
+//     {
+//         nama: "muhammad Andhika",
+//         email: "moh.andhika16@gmail.com"
+//     },
+//     {
+//         nama: "Cristiano Ronaldo",
+//         email: "Cristiano_ronald0@gmail.com",
+//         mode: "Prosus"
+//     },
+//     {
+//         nama: "Lionel Messi",
+//         email: "MessiM10@gmail.com"
+
+//     },
+//     {
+//         nama: "Roberto Firmino",
+//         email: "Roberto_firmino9@gmail.com",
+//         mode: "Prosus"
+//     }
+
+
+
+// ]
+
+
+
+// const el = mhs.map(m => `<ul> 
+// <li> ${m.nama} </li>
+// <li> ${m.email} </li>${(m.mode ? `${m.mode}` : '')}
+
+// </ul>` ).join('');
+
+
+// document.body.innerHTML = el;
+
+
+
+
+
+
+const mhs = {
+
+    nama: "Moh Andhika",
+    semester: 3,
+    mataKuliah: [
+
+        'Komunikas Data',
+        'Pemrograman Berorientasi objek',
+        'Aljabar dan linear',
+        'Sistem Berkas',
+
+
+    ]
+
+
+}
+
+
+
+function cetakMatkul(mataKuliah) {
+
+    return `<ol>
+       ${mataKuliah.map(mk => `<li>${mk}</li>`).join('')} 
+    </ol>`
+
+}
+
+
+const el = `
+<h1>${mhs.nama}</h1>
+<span class="semester">Semester : ${mhs.semester}</span>
+<h4>Mata Kuliah : ${cetakMatkul(mhs.mataKuliah)}</h4>`;
+
+
+
+
+document.body.innerHTML = el;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
