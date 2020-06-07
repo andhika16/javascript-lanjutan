@@ -1,101 +1,85 @@
-// const nama = "muhammad andhika"
-// const umur = 33
-// const email = "moh.andhika16@gmail.com"
+// Destructing asignment array
+// const meet = ['halo', 'nama', 'saya', 'andhika'];
+
+// const [halo, nama, saya, andhika] = meet;
+
+// console.log(halo);
 
 
-// function test(string, ...args) {
-//     let result = '';
+// Object
 
-//     string.forEach((str, i) => {
 
-//         result += `${str} ${args[i] || ''} `;
+// let mhs = {
+//     nama: "andhika",
+//     umur: 20
+// }
 
-//     });
+// let { nama, umur } = mhs;
 
-//     return result;
+// console.log(nama);
+// return Value pada array 
+
+// function coba() {
+
+//     return [1, 2, 3];
+// }
+
+// let [a, b, c] = coba()
+
+// console.log(b);
+
+
+
+// Rest Parameter
+
+// const [a, ...sisa] = [1, 2, 3, 4, 5, 6, 4, 7, 8, 6, 9];
+
+// console.log(a, sisa[4]);
+
+// Asign ke variable yang baru
+
+// let mhs = {
+//     nama: "andhika",
+//     umur: 20
+// }
+
+// let { nama: nma, umur: umr } = mhs;
+
+// console.log(umr);
+
+// bisa diberi properti default
+
+// let mhs = {
+//     nama: "andhika",
+//     umur: 20,
+//     email: "moh.andhika16@gmail.com"
+// }
+
+// let { nama: nma, umur: umr, email = "defaul@gmail.com" } = mhs;
+
+// console.log(email);
+
+
+// Mengambil field pada object ,setelah dikirim sebagai parameter untuk function
+
+
+// let mhs = {
+//     id: 16,
+//     nama: "andhika",
+//     umur: 20,
+//     email: "moh.andhika16@gmail.com"
+// }
+
+
+// function getId({ umur }) {
+
+//     return umur;
 
 // }
 
 
-// let str = test`halo nama saya ${nama}, umur saya ${umur}, tahun,email saya : ${email}`;
-// let coba = test`halo nama saya ${nama}, umur saya ${umur}, tahun,email saya : ${email}`;
 
-
-
-// console.log(str);
-
-let isiNama = function (nama, umur, email) {
-    this.nama = nama;
-    this.umur = umur;
-    this.email = email;
-
-    function test(string, ...args) {
-
-
-        return string.reduce((result, str, i) => `${result}${str} <span class="val">${args[i] || ''}</span> `, '');
-
-
-    }
-
-    let str = test`halo nama saya ${this.nama}, umur saya ${this.umur}, tahun,email saya : ${this.email}`;
-    return str;
-
-}
-
-
-
-let andhika = isiNama("andhika", 20, "andhika@gmail.com");
-
-let kope = isiNama("Kope", 21, "moh_kope17@gmail.com")
-
-
-
-console.log(kope);
-console.log(andhika);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(getId(mhs));
 
 
 
