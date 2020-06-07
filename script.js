@@ -29,25 +29,29 @@ let isiNama = function (nama, umur, email) {
     this.umur = umur;
     this.email = email;
 
+    function test(string, ...args) {
+
+
+        return string.reduce((result, str, i) => `${result}${str} <span class="val">${args[i] || ''}</span> `, '');
+
+
+    }
 
     let str = test`halo nama saya ${this.nama}, umur saya ${this.umur}, tahun,email saya : ${this.email}`;
     return str;
 
 }
 
-function test(string, ...args) {
 
 
-    return string.reduce((result, str, i) => `${result}${str} <span class="val">${args[i] || ''}</span> `, '');
+let andhika = isiNama("andhika", 20, "andhika@gmail.com");
 
+let kope = isiNama("Kope", 21, "moh_kope17@gmail.com")
 
-}
-
-let kope = isiNama("kope", 20, "kope_14314@gmail.com");
-document.body.innerHTML = kope;
 
 
 console.log(kope);
+console.log(andhika);
 
 
 
