@@ -1,85 +1,69 @@
-// Destructing asignment array
-// const meet = ['halo', 'nama', 'saya', 'andhika'];
 
-// const [halo, nama, saya, andhika] = meet;
+// // Destructring function
 
-// console.log(halo);
+function kalkulasi(a, b) {
+
+    return [a * b, a + b, a / b, a - b];
+
+}
 
 
-// Object
+const [kali, tambah, bagi, kurang] = kalkulasi(20, 3)
 
-
-// let mhs = {
-//     nama: "andhika",
-//     umur: 20
-// }
-
-// let { nama, umur } = mhs;
-
-// console.log(nama);
-// return Value pada array 
-
-// function coba() {
-
-//     return [1, 2, 3];
-// }
-
-// let [a, b, c] = coba()
-
-// console.log(b);
+console.log(kali);
 
 
 
-// Rest Parameter
 
-// const [a, ...sisa] = [1, 2, 3, 4, 5, 6, 4, 7, 8, 6, 9];
+// // jika ingin menambah properti tidak urut dengan returnya harus menggunakan objek seperti dibawah ini 
 
-// console.log(a, sisa[4]);
+function hitung(a, b) {
 
-// Asign ke variable yang baru
+    return {
+        kali: a * b,
+        tambah: a + b,
+        bagi: a / b,
+        kurang: a - b
+    }
 
-// let mhs = {
-//     nama: "andhika",
-//     umur: 20
-// }
-
-// let { nama: nma, umur: umr } = mhs;
-
-// console.log(umr);
-
-// bisa diberi properti default
-
-// let mhs = {
-//     nama: "andhika",
-//     umur: 20,
-//     email: "moh.andhika16@gmail.com"
-// }
-
-// let { nama: nma, umur: umr, email = "defaul@gmail.com" } = mhs;
-
-// console.log(email);
-
-
-// Mengambil field pada object ,setelah dikirim sebagai parameter untuk function
-
-
-// let mhs = {
-//     id: 16,
-//     nama: "andhika",
-//     umur: 20,
-//     email: "moh.andhika16@gmail.com"
-// }
-
-
-// function getId({ umur }) {
-
-//     return umur;
-
-// }
+}
 
 
 
-// console.log(getId(mhs));
+const { kali, kurang, bagi, tambah } = hitung(2, 3);
+
+
+console.log(kurang);
+
+// // Destructuring object 
+
+const mhs1 = {
+    nama: 'moh andhika',
+    umur: 33,
+    email: 'moh.andhika16@gmail.com',
+    nilai: {
+
+        tugas: 80,
+        uas: 70,
+        uts: 75
+
+    }
+
+}
+
+
+function hai({ nama, umur, nilai: { tugas, uts, uas } }) {
+
+    return `Halo nama saya ${nama}, umur saya ${umur}, nilai uas saya ${tugas}`;
+}
+
+
+console.log(hai(mhs1));
+
+
+
+
+
 
 
 
