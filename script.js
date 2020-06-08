@@ -1,57 +1,80 @@
-const nama = ['dhika', 'zulkfili', 'doddy'];
 
+// Menggabungkan dua array 
+// const mhs1 = ['andhika', 'doddy', 'erik'];
+// const dosen = ['wanda', 'hendrik', 'kope'];
 
-for (n of nama) {
+// const orang = [...dosen, ...mhs1];
 
-    console.log(n);
-
-}
-
-
-
-function jumlahAngka() {
-
-    console.log(arguments);
-
-
-}
-
-
-jumlahAngka(1,24,532344,35)
+// console.log(orang);
 
 
 
 
-let mhs = {
-    nama: "andhika",
-    umur: 33,
-    email: "moh.andhika16@gmail.com"
-};
+// Mengcopy array
 
-for (n in mhs) {
-    console.log(mhs[n]);
-}
+// const mhs = ['andhika', 'doddy', 'erik']; 
 
-function angka() {
+// const mhs1 = [...mhs]; maka ini sudah benar-benar tercopy
 
-    let jumlah = 0;
-    for ( a of arguments){
+// mhs1[0] = 'fajar';
 
-      jumlah += a
-    }
-    return jumlah;
-}
-console.log(angka(1,2,3,4,5,6,7,8));
+// console.log(mhs1);
 
-function add () {
-    let nama = [];
-    for ( n of arguments){
 
-        nama += n
+// const liMhs = document.querySelectorAll('ul li');
+// dibawah ini push secara manual
+// const mhs = [];
 
-    }
-    return nama;
-}
+// for (let i = 0; i < liMhs.length; i++) {
 
-console.log(add('y','o', 'l', 'o'))
+//     mhs.push(liMhs[i].textContent);
+
+// }
+
+// console.log(mhs);
+// bawah ini dengan menggunakan map
+// const liMhs = document.querySelectorAll('ul li');
+
+// const mhs = [...liMhs].map(m => m.textContent);
+
+// console.log(mhs);
+
+const nama = document.querySelector('.nama');
+
+const huruf = [...nama.textContent].map(n => `<span>${n}</span>`).join('');
+
+nama.innerHTML = huruf;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
