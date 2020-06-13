@@ -1,126 +1,53 @@
-// Promise
-// object yang merepresentasikan keberhasilan / kegagalan sebuah event yang asynchronous di masa yang akan datang
-// janji (terpenuhi / ingkar)
-// states(fullfilled / rejected / pending)
-// callback (resolve / rejected / finally )
-// aksi (then / catch)
 
+// const coba = new Promise(resolve => {
 
+//     setTimeout(() => {
+//         resolve('jalankan')
+//         // resolve(console.log('jalankan'))
+//     }, 2000)
 
-// contoh 
-// let ditepati = false;
-// const janji1 = new Promise((tepat, tidakTepati) => {
-//     if (ditepati) {
-//         tepat('janji telah ditepati !');
-
-//     } else {
-//         tidakTepati('janji diingkari');
-//     }
 // })
 
-
-// janji1
-//     .then(resolve => console.log('OK :' + resolve))
-//     .catch(resolve => console.log('Gagal :' + resolve));
-
-// Contoh kedua
+// coba.then((coba) => console.log(coba))
+// // console.log(coba);
 
 
-let ditepati = true;
-const janji2 = new Promise((resolve, rejected) => {
-    if (ditepati) {
-        setTimeout(() => {
-            resolve('janji ditepati..');
-        }, 2000)
+// fungsi mencoba promise
+// dan saya menggunakan default parameter difungsi coba promise
+function cobaPromise(waktu = 3000) {
+    return new Promise((resolve, reject) => {
 
-    } else {
-        setTimeout(() => {
-            rejected('janji tidak ditepati..');
-        }, 2000)
-
-    }
-})
-
-
-console.log('mulai');
-
-// console.log(janji2.then(() => console.log(janji2)));
-janji2
-    .finally(() => console.log('selesai menunggu'))
-    .then(resolve => console.log('OK :' + resolve))
-    .catch(resolve => console.log('Gagal :' + resolve));
-
-console.log('selesai');
-
-
-
-// promise.all
-
-const film = new Promise((resolve) => {
-
-    setTimeout(() => {
-        resolve({
-            judul: 'transformers',
-            Director: 'andhika',
-            tahun: 2017
-        });
-    }, 2000);
-
-});
-
-const cuaca = new Promise((resolve) => {
-
-    setTimeout(() => {
-        resolve({
-            kota: 'ponorogo',
-            suhu: 30,
-            kondisi: 'Cerah berawan'
-        });
-    }, 1000);
-
-});
-
-const mobil = new Promise((resolve) => {
-
-    setTimeout(() => {
-        resolve({
-            merk: 'ferrari',
-            kecepatan: 3000,
-            Produksi: 2010
-        });
-    }, 1000);
-
-});
-
-
-
-
-
-// film.then((res) => console.log(res))
-// cuaca.then((res) => console.log(res))
-
-
-Promise.all([film, cuaca, mobil])
-    // .then(res => console.log(res));
-    // dibawah ini menggunakan destructuring function kode
-    .then(res => {
-        const [film, cuaca, mobil] = res;
-        console.log(film);
-        console.log(cuaca);
-        console.log(mobil);
-
+        if (waktu < 5000) {
+            setTimeout(() => {
+                resolve('selesai');
+            }, waktu);
+        } else {
+            reject('kelamaan anying');
+        }
     });
+}
 
 
+// kode dibawah ini percobaan menggunakan then dan catch
 
+// const coba = cobaPromise();
+// coba
+//     .then((coba) => console.log(coba))
+//     .catch((coba) => console.log(coba))
+// maka hasilnya akan sama
 
+// membuat sychronus function dengan error handling
+async function cobaAsync(wkt) {
+    try {
+        // jika resolve berhasil maka akan mengembalikan fungsi dibawah ini
+        const coba = await cobaPromise(wkt);
+        console.log(coba);
 
+    } catch (err) {
+        // jika waktu resolve error maka akan mengembalikan fungsi dibawah ini
+        console.error(err);
+    }
+}
 
-
-
-
-
-
-
-
-
+// menjalankan fungsi Async dengan percobaan waktu jika waktu terlalu lama maka akan error tapi jika waktu nya dibawah 5 detik maka berhasil
+cobaAsync(1000);
